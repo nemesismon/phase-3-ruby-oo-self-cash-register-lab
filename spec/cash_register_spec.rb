@@ -1,3 +1,5 @@
+require 'pry'
+
 describe 'CashRegister' do
   let(:cash_register) { CashRegister.new }
   let(:cash_register_with_discount) { CashRegister.new(20) }
@@ -60,6 +62,7 @@ describe 'CashRegister' do
 
     context 'when the cash register was not initialized with an employee discount' do
       it 'returns a string error message that there is no discount to apply' do
+        # binding.pry
         expect(cash_register.apply_discount).to eq("There is no discount to apply.")
       end
     end
